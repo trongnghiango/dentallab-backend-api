@@ -1,15 +1,9 @@
-import 'dotenv/config';
-import { drizzle, NodePgDatabase } from 'drizzle-orm/node-postgres';
-import { Pool } from 'pg';
-import * as schema from '../schemas';
+import { db } from '../drizzle';
 
-const databaseUrl = process.env.DATABASE_URL;
+(async function run() {
+  //
+  // const result = await db.select().from(storeSchema);
 
-const pool = new Pool({
-  maxUses: 10,
-  max: 15,
-  connectionString: databaseUrl,
-  ssl: true,
-});
-
-export const db = drizzle(pool, { schema }) as NodePgDatabase<typeof schema>;
+  const [result] = await db.query.storeSchema.findMany({});
+  console.info({ result });
+})().catch((err) => console.error(err));
