@@ -52,7 +52,8 @@ EOL
 
 # Tạo file db index
 cat > src/db/index.ts << 'EOL'
-export * from './schemas';
-export * from './relations';
-export * from './types';
+export * from './core';
+export * from './inventory';
+export * from './sales';
+export * from './warranty';
 EOL
