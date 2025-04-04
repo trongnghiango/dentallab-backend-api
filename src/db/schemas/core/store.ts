@@ -1,7 +1,7 @@
 import { pgTable, serial, text, varchar } from 'drizzle-orm/pg-core';
 
 // Table
-export const store = pgTable('store', {
+export const storeSchema = pgTable('store', {
   id: serial('id').primaryKey(),
   name: varchar('name', { length: 255 }).notNull(),
   address: text('address').notNull(),
