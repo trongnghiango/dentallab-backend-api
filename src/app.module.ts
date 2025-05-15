@@ -5,6 +5,8 @@ import { DrizzleModule } from './db/drizzle.module';
 import { ProductModule } from './product/product.module';
 import { StoreModule } from './store/store.module';
 import { SupplierModule } from './supplier/supplier.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -14,6 +16,8 @@ import { SupplierModule } from './supplier/supplier.module';
     ProductModule,
     StoreModule,
     SupplierModule,
+    UserModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
